@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer components {
+    .planet {
+        @apply w-24 h-24 bg-white rounded-full shadow-lg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden;
+    }
+
+    .planet img {
+        @apply w-full h-full object-cover rounded-full;
+    }
+
+    .orbit-path {
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border-2 border-dashed border-gray-300/30 dark:border-gray-600/30 rounded-full;
+    }
+
+    /* Hero Section Styles */
+    .hero-background {
+        @apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+        background-attachment: fixed;
+    }
+
+    .hero-overlay {
+        @apply absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-800/80;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        @apply w-2;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-gray-100 dark:bg-gray-800;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500;
+    }
+
+    /* Custom animations */
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .animate-slide-up {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .animate-bounce-slow {
+        animation: bounce 2s infinite;
+    }
+
+    /* Custom button styles */
+    .btn-primary {
+        @apply bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full transition duration-300 transform hover:scale-105 text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+    }
+
+    .btn-secondary {
+        @apply bg-gray-700 hover:bg-gray-800 text-white px-8 py-3 rounded-full transition duration-300 transform hover:scale-105 text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+    }
+
+    /* Custom card styles */
+    .card {
+        @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
+    }
+
+    .card-hover {
+        @apply transform transition duration-300 hover:-translate-y-1 hover:shadow-lg;
+    }
+
+    /* Custom form styles */
+    .form-input {
+        @apply w-full px-4 py-2 border dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300;
+    }
+
+    .form-label {
+        @apply block text-gray-700 dark:text-gray-300 mb-2 font-medium;
+    }
+
+    /* Custom section styles */
+    .section {
+        @apply py-12;
+    }
+
+    .section-title {
+        @apply text-3xl font-bold text-slate-800 dark:text-white mb-6;
+    }
+
+    /* Custom navigation styles */
+    .nav-link {
+        @apply text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-300 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700;
+    }
+
+    /* Custom progress bar styles */
+    .progress-bar {
+        @apply w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 overflow-hidden;
+    }
+
+    .progress-bar-fill {
+        @apply bg-blue-500 h-2 rounded-full transition-all duration-1000;
+    }
+
+    /* Custom tooltip styles */
+    .tooltip {
+        @apply invisible absolute bg-gray-800 text-white px-3 py-1 rounded-lg text-sm opacity-0 transition-opacity duration-300;
+    }
+
+    .has-tooltip:hover .tooltip {
+        @apply visible opacity-100;
+    }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .planet {
+        @apply w-20 h-20;
+    }
+
+    .orbit-path {
+        @apply w-[300px] h-[300px];
+    }
+}
+
+@media (max-width: 768px) {
+    .planet {
+        @apply w-16 h-16;
+    }
+
+    .orbit-path {
+        @apply w-[250px] h-[250px];
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+
+    body {
+        @apply bg-white text-black;
+    }
+
+    .dark\:bg-gray-800 {
+        @apply bg-white;
+    }
+
+    .dark\:text-white {
+        @apply text-black;
+    }
+} 
