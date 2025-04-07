@@ -109,4 +109,55 @@ window.addEventListener('scroll', () => {
 
 scrollToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Check for saved theme preference or use system preference
+const savedTheme = localStorage.getItem('theme') || 
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+// Apply saved theme
+if (savedTheme === 'dark') {
+    html.classList.add('dark');
+} else {
+    html.classList.remove('dark');
+}
+
+// Theme toggle click handler
+themeToggle.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    const isDark = html.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    console.log('Theme toggled:', isDark ? 'dark' : 'light');
+});
+
+console.log('Theme toggle initialized');
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.skill-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+            
+            card.style.transform = `perspective(1000px) rotateX(${deltaY * -10}deg) rotateY(${deltaX * 10}deg) scale(1.05)`;
+            card.style.boxShadow = `0 0 35px rgba(59, 130, 246, 0.6), ${deltaX * 20}px ${deltaY * 20}px 20px rgba(0, 0, 0, 0.1)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            card.style.boxShadow = 'none';
+        });
+    });
 }); 

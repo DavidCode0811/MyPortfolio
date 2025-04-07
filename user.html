@@ -17,9 +17,15 @@
                     <span class="text-xl font-bold text-slate-800 dark:text-white">ProfileHub</span>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <button class="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-all duration-300 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transform hover:scale-105">Home</button>
-                    <button class="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-all duration-300 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transform hover:scale-105">About</button>
-                    <button class="text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-all duration-300 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transform hover:scale-105">Contact</button>
+                    <button class="text-slate-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 px-4 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 transform hover:scale-105 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.8)]">Home</button>
+                    <button class="text-slate-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 px-4 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 transform hover:scale-105 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.8)]">About</button>
+                    <button class="text-slate-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 px-4 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 transform hover:scale-105 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.8)]">Contact</button>
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path class="hidden dark:block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            <path class="block dark:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -86,7 +92,7 @@
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 py-12">
         <!-- About Section -->
-        <section id="about" class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 transition-colors duration-300">
+        <section id="about" class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] dark:hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]">
             <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">About Me</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -119,10 +125,10 @@
         </section>
 
         <!-- Skills Section -->
-        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 transition-colors duration-300">
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] dark:hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]">
             <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">Skills & Expertise</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+                <div class="skill-card bg-gray-50 dark:bg-gray-700 p-6 rounded-lg transition-all duration-300 hover:shadow-[0_0_35px_rgba(59,130,246,0.6)] dark:hover:shadow-[0_0_45px_rgba(59,130,246,0.8)] transform hover:scale-105 hover:border hover:border-blue-400 dark:hover:border-blue-500">
                     <h3 class="text-xl font-semibold mb-3 text-slate-800 dark:text-white">Frontend Development</h3>
                     <div class="space-y-2">
                         <div class="flex justify-between">
@@ -134,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+                <div class="skill-card bg-gray-50 dark:bg-gray-700 p-6 rounded-lg transition-all duration-300 hover:shadow-[0_0_35px_rgba(59,130,246,0.6)] dark:hover:shadow-[0_0_45px_rgba(59,130,246,0.8)] transform hover:scale-105 hover:border hover:border-blue-400 dark:hover:border-blue-500">
                     <h3 class="text-xl font-semibold mb-3 text-slate-800 dark:text-white">Backend Development</h3>
                     <div class="space-y-2">
                         <div class="flex justify-between">
@@ -146,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+                <div class="skill-card bg-gray-50 dark:bg-gray-700 p-6 rounded-lg transition-all duration-300 hover:shadow-[0_0_35px_rgba(59,130,246,0.6)] dark:hover:shadow-[0_0_45px_rgba(59,130,246,0.8)] transform hover:scale-105 hover:border hover:border-blue-400 dark:hover:border-blue-500">
                     <h3 class="text-xl font-semibold mb-3 text-slate-800 dark:text-white">Database</h3>
                     <div class="space-y-2">
                         <div class="flex justify-between">
@@ -162,7 +168,7 @@
         </section>
 
         <!-- Projects Section -->
-        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 transition-colors duration-300">
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] dark:hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]">
             <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden transition-colors duration-300">
@@ -181,7 +187,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 transition-colors duration-300">
+        <section id="contact" class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] dark:hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]">
             <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">Get In Touch</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
