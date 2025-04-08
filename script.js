@@ -187,4 +187,18 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.boxShadow = 'none';
         });
     });
+
+    // Profile picture hover effect
+    const profilePic = document.querySelector('img[alt="Profile Picture"]');
+    if (profilePic) {
+        profilePic.addEventListener('mouseenter', () => {
+            profilePic.style.transform = 'scale(1.05)';
+            profilePic.style.boxShadow = '0 0 35px rgba(59, 130, 246, 0.6)';
+        });
+        
+        profilePic.addEventListener('mouseleave', () => {
+            profilePic.style.transform = 'scale(1)';
+            profilePic.style.boxShadow = 'none';
+        });
+    }
 }); 
