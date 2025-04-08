@@ -116,27 +116,54 @@ const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
 // Check for saved theme preference or use system preference
-const savedTheme = localStorage.getItem('theme') || 
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-// Apply saved theme
-if (savedTheme === 'dark') {
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    html.classList.toggle('dark', savedTheme === 'dark');
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     html.classList.add('dark');
-} else {
-    html.classList.remove('dark');
 }
 
-// Theme toggle click handler
 themeToggle.addEventListener('click', () => {
     html.classList.toggle('dark');
-    const isDark = html.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    console.log('Theme toggled:', isDark ? 'dark' : 'light');
+    localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
 });
 
 console.log('Theme toggle initialized');
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Navigation active state
+    const navButtons = document.querySelectorAll('nav button:not(#theme-toggle)');
+    
+    navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            navButtons.forEach(btn => {
+                btn.classList.remove('bg-slate-100', 'dark:bg-blue-900/30', 'text-slate-900', 'dark:text-blue-400');
+            });
+            
+            // Add active class to clicked button
+            button.classList.add('bg-slate-100', 'dark:bg-blue-900/30', 'text-slate-900', 'dark:text-blue-400');
+        });
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        html.classList.toggle('dark', savedTheme === 'dark');
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        html.classList.add('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Skill cards hover effect
     const cards = document.querySelectorAll('.skill-card');
     
     cards.forEach(card => {
